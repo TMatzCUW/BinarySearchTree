@@ -58,28 +58,29 @@ class BinarySearchTree:
     def inorder(self, root):
         if root:
             self.inorder(root.left)
-            print(root.value)
+            #print(root.value)
             self.inorder(root.right)
 
 
 def genRandoArray():
     arr = []
+    orderArr=[]
     for i in range(0,10000):
         arr.append(i)
+    orderArr=arr
     random.shuffle(arr)
     return arr
 
+def test():
+    tree.search(6969)
 
 tree = BinarySearchTree()
 array = genRandoArray()
 for a in array:
     tree.insertion(a)
 
+print(timeit.Timer(test).timeit(1))
+
 tree.inorder(tree.root)
-
-
-def test():
-    tree.search(6969)
-
 
 print(timeit.Timer(test).timeit(1))
